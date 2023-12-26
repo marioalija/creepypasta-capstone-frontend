@@ -13,10 +13,10 @@ export function StoriesNew(props) {
           Name: <input name="name" type="text" />
         </div>
         <div>
-          Image: <input name="url" type="text" />
+          Image: <input name="image" type="text" />
         </div>
         <div>
-          Descritption: <input name="descritption" type="text" />
+          Descritption: <input name="description" type="text" />
         </div>
         <div>
           Category: <input name="category" type="text" />

@@ -58,6 +58,14 @@ export function Content() {
     setIsStoriesShowVisible(false);
   };
 
+  const handleDestroyStory = (story) => {
+    console.log("handleDestroyStory", story);
+    axios.delete(`http://localhost:3000/stories/${story.id}.json`).then((response) => {
+      setStories(stories.filter((p) => p.id !== story.id));
+      handleClose();
+    });
+  };
+
   useEffect(handleIndexStories, []);
   return (
     <main>
@@ -68,7 +76,7 @@ export function Content() {
         <StoriesNew onCreateStory={handleCreateStory} />
         <StoriesIndex stories={stories} onShowStory={handleShowStory} />
         <Modal show={isStoriesShowVisible} onClose={handleClose}>
-          <StoriesShow story={currentStory} onUpdateStory={handleUpdateStory} />
+          <StoriesShow story={currentStory} onUpdateStory={handleUpdateStory} onDestroyStory={handleDestroyStory} />
         </Modal>
       </div>
     </main>
