@@ -1,3 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+img {
+  height: 400px;
+  object-fit: contain;
+}
+
+body {
+  background-image: url();
+  
+}
+  body { background-size: cover;}
