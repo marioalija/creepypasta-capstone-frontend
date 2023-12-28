@@ -1,7 +1,9 @@
 export function Footer() {
   return (
     <footer>
-      <p>Copyright 2023</p>
+      <div className="text-center">
+        <p>Copyright 2023</p>
+      </div>
     </footer>
   );
 }

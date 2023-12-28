@@ -8,7 +8,13 @@ img {
 }
 
 body {
+  font-family: 'MedievalSharp', cursive;
+  font-family: 'Nosifer', sans-serif;
   background-image: url();
+  color: crimson;
   
 }
   body { background-size: cover;}
+
+
+  

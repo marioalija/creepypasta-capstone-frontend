@@ -1,20 +1,22 @@
 /* eslint-disable no-unused-vars */
+import { StoriesNew } from "./StoriesNew";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { About } from "./About";
-import { Login } from "./Login";
-import { LogoutLink } from "./LogoutLink";
 import { StoriesIndex } from "./StoriesIndex";
-import { StoriesNew } from "./StoriesNew";
 import { StoriesShow } from "./StoriesShow";
+// import { Login } from "./Login";
 import { Modal } from "./Modal";
-import { MyPage } from "./MyPage";
 
-export function Content() {
+export function MyPage() {
   const [stories, setStories] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isStoriesShowVisible, setIsStoriesShowVisible] = useState(false);
   const [currentStory, setCurrentStory] = useState({});
+  // const [errors, setErrors] = useState([]);
+
+  const handleLogin = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
 
   const handleIndexStories = () => {
     console.log("handleIndexStories");
@@ -69,20 +71,27 @@ export function Content() {
   };
 
   useEffect(handleIndexStories, []);
+
   return (
-    <main>
-      <div>
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/mypage" element={<MyPage />} />
-          <Route path="/stories" element={<StoriesIndex stories={stories} onShowStory={handleShowStory} />} />
-        </Routes>
-        <LogoutLink />
-        <Modal show={isStoriesShowVisible} onClose={handleClose}>
-          <StoriesShow story={currentStory} onUpdateStory={handleUpdateStory} onDestroyStory={handleDestroyStory} />
-        </Modal>
-      </div>
-    </main>
+    <div className="grid text-center">
+      {isLoggedIn ? (
+        // If logged in, show user content
+        <div>
+          <h2>Welcome, User!</h2>
+          <StoriesNew onCreateStory={handleCreateStory} />
+          <StoriesIndex stories={stories} onShowStory={handleShowStory} />
+          <Modal show={isStoriesShowVisible} onClose={handleClose}>
+            <StoriesShow story={currentStory} onUpdateStory={handleUpdateStory} onDestroyStory={handleDestroyStory} />
+          </Modal>
+        </div>
+      ) : (
+        // If not logged in, show a login prompt
+
+        <div>
+          <p>Please log in to access the content.</p>
+          <button onClick={handleLogin}>Login</button>
+        </div>
+      )}
+    </div>
   );
 }

@@ -10,6 +10,11 @@
 }
 
 .modal-main {
+  font-family: 'MedievalSharp', cursive;
+  font-family: 'Nosifer', sans-serif;
+  background-image: url();
+  color: crimson;  
+  
   position: fixed;
   background: white;
   width: 80%;
@@ -28,3 +33,4 @@
   top: 0em;
   right: 0.2em;
 }
+

@@ -30,9 +30,9 @@ export function StoriesShow(props) {
         <div>
           Category: <input defaultValue={props.story.category} name="category" type="text" />
         </div>
-        <div>
+        {/* <div>
           Comments: <input defaultValue={props.story.comments.body} name="body" type="text" />
-        </div>
+        </div> */}
         <button type="submit">Update story</button>
       </form>
       <button onClick={handleClick}>Destroy story</button>
