@@ -69,13 +69,14 @@ export function Content() {
   };
 
   useEffect(handleIndexStories, []);
+
   return (
     <main>
       <div>
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/mypage" element={<MyPage stories={stories} onShowStory={handleShowStory} />} />
           <Route path="/stories" element={<StoriesIndex stories={stories} onShowStory={handleShowStory} />} />
         </Routes>
         <LogoutLink />

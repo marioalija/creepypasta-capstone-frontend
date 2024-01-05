@@ -21,7 +21,7 @@ export function Header() {
       </Modal>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <Link to="/about" className="navbar-brand">
+          <Link id="logo" to="/about" className="navbar-brand">
             CreepyPasta
           </Link>
           <button
@@ -38,27 +38,27 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">
+                <Link id="homebuttons" to="/" className="nav-link active" aria-current="page">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/mypage" className="nav-link active" aria-current="page">
+                <Link id="homebuttons" to="/mypage" className="nav-link active" aria-current="page">
                   My Page
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/stories" className="nav-link">
+                <Link id="homebuttons" to="/stories" className="nav-link">
                   All Stories
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" onClick={handleSignupShow}>
+                <a id="homebuttons" className="nav-link" onClick={handleSignupShow}>
                   Sign Up
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/login">
+                <a id="homebuttons" className="nav-link" href="/login">
                   Log In
                 </a>
               </li>

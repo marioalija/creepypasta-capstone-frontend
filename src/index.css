@@ -1,20 +1,51 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  background-size: cover;
+}
+#abouttext{
+  color: crimson;
+}
+#navbarNav{
+  background-color: rgb(119, 24, 24);
+}
+#homebuttons{
+  color: azure;
+}
+#index{
+  background-color: rgb(52, 56, 56);
+}
+.card-body{
+  background-color: black;
+}
 img {
   height: 400px;
   object-fit: contain;
 }
-
-body {
+h1 {
+  color: crimson;
+  font-family: 'MedievalSharp', cursive;
+  font-family: 'Nosifer', sans-serif;
+}
+h2  {
   font-family: 'MedievalSharp', cursive;
   font-family: 'Nosifer', sans-serif;
   background-image: url();
   color: crimson;
   
 }
-  body { background-size: cover;}
+footer{
+  font-family: 'Nosifer', sans-serif;
+  color: crimson;
+}
+#logo {
+  font-family: 'Nosifer', sans-serif;
+  color: crimson;
 
+}
 
-  
+#moreinfo{
+  background-color: lightgray;
+  color: darkred;
+}
